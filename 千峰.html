@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{margin: 0;padding: 0;}
+			ul{list-style: none;}
+			.nav{width:500px;margin: 0 auto;}
+			.nav:after, .main:after{content: '';clear: both;height: 0;display: block;}
+			.nav li{float: left;width: 100px;line-height: 30px;text-align: center;background: lightblue;}
+			.main{width: 1200px;margin: 0 auto;}
+			.main li{width: 400px;float: left;}
+			
+			/*响应布局：不可情况的分辨率之下，布局会有不同
+			媒体（音频，视频，内容显示等等）查询
+			识别屏幕分辨率*/
+			@media only screen and (min-width: 480px) and (max-width: 1024px) {
+				.main{width: 100%;}
+				.main li{width: calc(100% / 3);}
+				.main img{width: 100%;}
+			}
+			@media only screen  and (max-width: 480px) {
+				.main{width: 100%;}
+				.main li{float: none;width: 100%;}
+				.main img{width: 100%;}
+				
+				.nav{position: fixed;left: 0;top: 100px;width: 100px;}
+				.nav li {float: none;}
+				.nav li:hover{color: lightcoral;}
+			}	
+			
+		</style>
+	</head>
+	<body>
+		<div class="containner">
+			<ul class="nav">
+				<li>新闻资讯</li>
+				<li>课程介绍</li>
+				<li>联系我们</li>
+				<li>在线客服</li>
+				<li>更多资料</li>
+			</ul>
+			<ul class="main">
+				<li><img src="img/content_03.jpg" alt="" /></li>
+				<li><img src="img/content_05.jpg"/></li>
+				<li><img src="img/content_07.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+</html>
